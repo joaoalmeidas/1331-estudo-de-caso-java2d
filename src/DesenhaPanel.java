@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Paint;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
@@ -15,7 +16,7 @@ public class DesenhaPanel extends JPanel {
 	private int contagemFormas = 0;
 	private int tipoForma = 0;
 	private MinhaForma formaAtual;
-	private Color corAtual;
+	private Paint corAtual;
 	private boolean preenchido;
 	private JLabel labelStatus;
 	
@@ -81,12 +82,12 @@ public class DesenhaPanel extends JPanel {
 	}
 	
 	
-	public Color getCorAtual() {
+	public Paint getCorAtual() {
 		return corAtual;
 	}
 	
 	
-	public void setCorAtual(Color corAtual) {
+	public void setCorAtual(Paint corAtual) {
 		this.corAtual = corAtual;
 	}
 	
