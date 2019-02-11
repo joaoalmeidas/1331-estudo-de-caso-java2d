@@ -207,32 +207,32 @@ public class DesenhaPanel extends JPanel {
 			
 			if(getFormaAtual() instanceof MinhaCircunferencia) {
 				
-				formaAtual = new MinhaCircunferencia(0, 0, 0, 0, (Color) getCorAtual(), getTracoAtual(), isPreenchido());
+				formaAtual = new MinhaCircunferencia(0, 0, 0, 0, getCorAtual(), getTracoAtual(), isPreenchido());
 				setTipoForma(0);
 				
 			}else if(getFormaAtual() instanceof MeuRetangulo) {
 				
-				formaAtual = new MeuRetangulo(0, 0, 0, 0, (Color) getCorAtual(), getTracoAtual(), isPreenchido());
+				formaAtual = new MeuRetangulo(0, 0, 0, 0, getCorAtual(), getTracoAtual(), isPreenchido());
 				setTipoForma(1);
 				
 			}else if(getFormaAtual() instanceof MinhaLinha) {
 				
-				formaAtual = new MinhaLinha(0, 0, 0, 0, (Color)getCorAtual(), getTracoAtual());
+				formaAtual = new MinhaLinha(0, 0, 0, 0, getCorAtual(), getTracoAtual());
 				setTipoForma(2);
 				
 			}else {
 				
 				if(getTipoForma() == 0) {
 					
-					formaAtual = new MinhaCircunferencia(0, 0, 0, 0, (Color) getCorAtual(), getTracoAtual(), isPreenchido());
+					formaAtual = new MinhaCircunferencia(0, 0, 0, 0, getCorAtual(), getTracoAtual(), isPreenchido());
 					
 				}else if(getTipoForma() == 1) {
 					
-					formaAtual = new MeuRetangulo(0, 0, 0, 0, (Color) getCorAtual(), getTracoAtual(), isPreenchido());
+					formaAtual = new MeuRetangulo(0, 0, 0, 0, getCorAtual(), getTracoAtual(), isPreenchido());
 					
 				}else if(getTipoForma() == 2) {
 					
-					formaAtual = new MinhaLinha(0, 0, 0, 0, (Color)getCorAtual(), getTracoAtual());
+					formaAtual = new MinhaLinha(0, 0, 0, 0, getCorAtual(), getTracoAtual());
 					
 				}
 				

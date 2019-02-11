@@ -1,6 +1,7 @@
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Paint;
 import java.awt.Stroke;
 
 public class MeuRetangulo extends MinhaFormaComLimites {
@@ -12,7 +13,7 @@ public class MeuRetangulo extends MinhaFormaComLimites {
 		
 	}
 
-	public MeuRetangulo(int x1, int y1, int x2, int y2, Color cor, Stroke traco, boolean preenchido) {
+	public MeuRetangulo(int x1, int y1, int x2, int y2, Paint cor, Stroke traco, boolean preenchido) {
 		super(x1, y1, x2, y2, cor, traco, preenchido);
 
 	}
