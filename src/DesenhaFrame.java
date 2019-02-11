@@ -21,6 +21,7 @@ public class DesenhaFrame extends JFrame{
 	private final JComboBox<String> listaCores;
 	private final JComboBox<String> listaFormas;
 	private final JCheckBox preenchido;
+	private final JCheckBox gradiente;
 	
 	private static final String[] nomeCores = {"Azul", "Vermelho", "Verde", "Branco", "Preto", "Amarelo", "Rosa", "Magenta", "Cinza",
 			"Laranja", "Cinza Escuro", "Cinza Claro", "Ciano"};
@@ -47,12 +48,14 @@ public class DesenhaFrame extends JFrame{
 		listaFormas = new JComboBox<String>(nomeFormas);
 		preenchido = new JCheckBox("Preenchido");
 		preenchido.setSelected(true);
+		gradiente = new JCheckBox("Usar gradiente");
 		
 		opcoes.add(botaoDesfazer);
 		opcoes.add(botaoLimpar);
 		opcoes.add(listaCores);
 		opcoes.add(listaFormas);
 		opcoes.add(preenchido);
+		opcoes.add(gradiente);
 		
 		add(opcoes, BorderLayout.NORTH);
 		add(desenho, BorderLayout.CENTER);
