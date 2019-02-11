@@ -1,7 +1,9 @@
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Paint;
+import java.awt.Stroke;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
@@ -19,6 +21,7 @@ public class DesenhaPanel extends JPanel {
 	private Paint corAtual;
 	private boolean preenchido;
 	private JLabel labelStatus;
+	private Stroke tracoAtual;
 	
 	public DesenhaPanel(JLabel labelStatus) {
 		
@@ -30,6 +33,7 @@ public class DesenhaPanel extends JPanel {
 		corAtual = Color.BLACK;
 		setBackground(Color.WHITE);
 		preenchido = true;
+		tracoAtual = new BasicStroke();
 		EventosMouse eventos = new EventosMouse();
 		addMouseListener(eventos);
 		addMouseMotionListener(eventos);
@@ -112,6 +116,16 @@ public class DesenhaPanel extends JPanel {
 	}
 	
 	
+	public Stroke getTracoAtual() {
+		return tracoAtual;
+	}
+
+
+	public void setTracoAtual(Stroke tracoAtual) {
+		this.tracoAtual = tracoAtual;
+	}
+
+
 	@Override
 	protected void paintComponent(Graphics arg0) {
 		super.paintComponent(arg0);               
@@ -193,32 +207,32 @@ public class DesenhaPanel extends JPanel {
 			
 			if(getFormaAtual() instanceof MinhaCircunferencia) {
 				
-				formaAtual = new MinhaCircunferencia(0, 0, 0, 0, getCorAtual(), isPreenchido());
+				formaAtual = new MinhaCircunferencia(0, 0, 0, 0, (Color) getCorAtual(), getTracoAtual(), isPreenchido());
 				setTipoForma(0);
 				
 			}else if(getFormaAtual() instanceof MeuRetangulo) {
 				
-				formaAtual = new MeuRetangulo(0, 0, 0, 0, getCorAtual(), isPreenchido());
+				formaAtual = new MeuRetangulo(0, 0, 0, 0, (Color) getCorAtual(), getTracoAtual(), isPreenchido());
 				setTipoForma(1);
 				
 			}else if(getFormaAtual() instanceof MinhaLinha) {
 				
-				formaAtual = new MinhaLinha(0, 0, 0, 0, getCorAtual());
+				formaAtual = new MinhaLinha(0, 0, 0, 0, (Color)getCorAtual(), getTracoAtual());
 				setTipoForma(2);
 				
 			}else {
 				
 				if(getTipoForma() == 0) {
 					
-					formaAtual = new MinhaCircunferencia(0, 0, 0, 0, getCorAtual(), isPreenchido());
+					formaAtual = new MinhaCircunferencia(0, 0, 0, 0, (Color) getCorAtual(), getTracoAtual(), isPreenchido());
 					
 				}else if(getTipoForma() == 1) {
 					
-					formaAtual = new MeuRetangulo(0, 0, 0, 0, getCorAtual(), isPreenchido());
+					formaAtual = new MeuRetangulo(0, 0, 0, 0, (Color) getCorAtual(), getTracoAtual(), isPreenchido());
 					
 				}else if(getTipoForma() == 2) {
 					
-					formaAtual = new MinhaLinha(0, 0, 0, 0, getCorAtual());
+					formaAtual = new MinhaLinha(0, 0, 0, 0, (Color)getCorAtual(), getTracoAtual());
 					
 				}
 				
