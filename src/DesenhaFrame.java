@@ -3,12 +3,12 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ContainerListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,7 +18,9 @@ public class DesenhaFrame extends JFrame{
 
 	private final JButton botaoDesfazer;
 	private final JButton botaoLimpar;
-	private final JComboBox<String> listaCores;
+	//private final JComboBox<String> listaCores;
+	private final JButton botaoPrimeiraCor;
+	private final JButton botaoSegundaCor;
 	private final JComboBox<String> listaFormas;
 	private final JCheckBox preenchido;
 	private final JCheckBox gradiente;
@@ -44,25 +46,29 @@ public class DesenhaFrame extends JFrame{
 		
 		botaoDesfazer = new JButton("Desfazer");
 		botaoLimpar = new JButton("Limpar");
-		listaCores = new JComboBox<String>(nomeCores);
+		//listaCores = new JComboBox<String>(nomeCores);
 		listaFormas = new JComboBox<String>(nomeFormas);
 		preenchido = new JCheckBox("Preenchido");
 		preenchido.setSelected(true);
 		gradiente = new JCheckBox("Usar gradiente");
+		botaoPrimeiraCor = new JButton("Primeira Cor");
+		botaoSegundaCor = new JButton("Segunda Cor");
 		
 		opcoes.add(botaoDesfazer);
 		opcoes.add(botaoLimpar);
-		opcoes.add(listaCores);
+		//opcoes.add(listaCores);
 		opcoes.add(listaFormas);
 		opcoes.add(preenchido);
 		opcoes.add(gradiente);
+		opcoes.add(botaoPrimeiraCor);
+		opcoes.add(botaoSegundaCor);
 		
 		add(opcoes, BorderLayout.NORTH);
 		add(desenho, BorderLayout.CENTER);
 		add(status, BorderLayout.SOUTH);
 		
 		desenho.setPreenchido(preenchido.isSelected());
-		desenho.setCorAtual(cores[listaCores.getSelectedIndex()]);
+		desenho.setCorAtual(Color.BLUE);
 		
 		if(listaFormas.getSelectedItem().toString().equals("Circunferência")) {
 			
@@ -108,6 +114,44 @@ public class DesenhaFrame extends JFrame{
 				
 		);
 		
+		botaoPrimeiraCor.addActionListener(
+				
+				new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						
+						desenho.setCorAtual(JColorChooser.showDialog(DesenhaFrame.this, "Escolha uma cor", (Color) desenho.getCorAtual()));
+						
+						if(desenho.getCorAtual() == null) {
+							desenho.setCorAtual(Color.GRAY);
+						}
+						
+					}
+					
+					
+					
+				});
+		
+		botaoSegundaCor.addActionListener(
+				
+				new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						
+						desenho.setCorAtualSecundaria(JColorChooser.showDialog(DesenhaFrame.this, "Escolha uma cor", (Color) desenho.getCorAtualSecundaria()));
+						
+						if(desenho.getCorAtualSecundaria() == null) {
+							desenho.setCorAtualSecundaria(Color.GRAY);
+						}
+						
+					}
+					
+					
+					
+				});
+		/*
 		listaCores.addItemListener(
 				
 				new ItemListener() {
@@ -122,7 +166,7 @@ public class DesenhaFrame extends JFrame{
 				}
 				
 		);
-		
+		*/
 		listaFormas.addItemListener(
 				
 				new ItemListener() {

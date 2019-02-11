@@ -6,7 +6,7 @@ public class DesenhoTeste {
 		
 		DesenhaFrame desenho = new DesenhaFrame();
 		desenho.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		desenho.setSize(600, 600);
+		desenho.setSize(1000, 600);
 		desenho.setVisible(true);
 	}
 
