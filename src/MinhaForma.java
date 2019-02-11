@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Paint;
 
 public abstract class MinhaForma {
 	
@@ -7,14 +8,14 @@ public abstract class MinhaForma {
 	private int y1;
 	private int x2;
 	private int y2;
-	private Color cor;
+	private Paint cor;
 	
 	
 	public MinhaForma() {
 		this(0, 0, 0, 0, Color.BLACK);
 	}
 	
-	public MinhaForma(int x1, int y1, int x2, int y2, Color cor) {
+	public MinhaForma(int x1, int y1, int x2, int y2, Paint cor) {
 		super();
 		this.x1 = x1;
 		this.y1 = y1;
@@ -55,11 +56,11 @@ public abstract class MinhaForma {
 		this.y2 = y2;
 	}
 
-	public Color getCor() {
+	public Paint getCor() {
 		return cor;
 	}
 
-	public void setCor(Color cor) {
+	public void setCor(Paint cor) {
 		this.cor = cor;
 	}
 	
