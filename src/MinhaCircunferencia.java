@@ -1,5 +1,5 @@
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class MinhaCircunferencia extends MinhaFormaComLimites{
 	
@@ -14,7 +14,7 @@ public class MinhaCircunferencia extends MinhaFormaComLimites{
 	}
 
 	@Override
-	public void desenha(Graphics g) {
+	public void desenha(Graphics2D g) {
 		
 		g.setColor(getCor());
 		g.drawOval(retornaXCimaEsquerda(), retornaYCimaEsquerda(), retornaAltura(), retornaLargura());

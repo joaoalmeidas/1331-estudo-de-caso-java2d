@@ -1,5 +1,5 @@
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class MeuRetangulo extends MinhaFormaComLimites {
 	
@@ -16,7 +16,7 @@ public class MeuRetangulo extends MinhaFormaComLimites {
 	}
 	
 	@Override
-	public void desenha(Graphics g) {
+	public void desenha(Graphics2D g) {
 		
 		g.setColor(getCor());
 		g.drawRect(retornaXCimaEsquerda(), retornaYCimaEsquerda(), retornaAltura(), retornaLargura());

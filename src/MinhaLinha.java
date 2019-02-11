@@ -1,5 +1,5 @@
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class MinhaLinha extends MinhaForma {
 	
@@ -15,7 +15,7 @@ public class MinhaLinha extends MinhaForma {
 
 	}
 	
-	public void desenha(Graphics g) {
+	public void desenha(Graphics2D g) {
 		
 		g.setColor(getCor());
 		g.drawLine(getX1(), getY1(), getX2(), getY2());

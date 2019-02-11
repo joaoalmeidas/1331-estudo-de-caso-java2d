@@ -1,5 +1,5 @@
 import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public abstract class MinhaForma {
 	
@@ -63,7 +63,7 @@ public abstract class MinhaForma {
 		this.cor = cor;
 	}
 	
-	public abstract void desenha(Graphics g);
+	public abstract void desenha(Graphics2D g);
 	
 	
 	
