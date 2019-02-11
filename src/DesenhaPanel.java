@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
@@ -117,7 +118,7 @@ public class DesenhaPanel extends JPanel {
 		for(int i = 0; i < contagemFormas; i++) {
 			
 			if(getFormas()[i] != null) {
-				getFormas()[i].desenha(arg0);
+				getFormas()[i].desenha((Graphics2D)arg0);
 			}
 			
 		}
@@ -157,7 +158,7 @@ public class DesenhaPanel extends JPanel {
 			getFormaAtual().setX2(e.getX());
 			getFormaAtual().setY2(e.getY());
 			
-			formaAtual.desenha(getGraphics());
+			formaAtual.desenha((Graphics2D)getGraphics());
 			
 			labelStatus.setText(String.format("%d, %d", e.getX(), e.getY()));
 			
