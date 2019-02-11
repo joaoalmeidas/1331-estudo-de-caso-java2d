@@ -1,4 +1,6 @@
+import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Stroke;
 
 public abstract class MinhaFormaComLimites extends MinhaForma {
 	
@@ -6,12 +8,12 @@ public abstract class MinhaFormaComLimites extends MinhaForma {
 	
 	public MinhaFormaComLimites() {
 		
-		this(0, 0, 0, 0, Color.BLACK, false);
+		this(0, 0, 0, 0, Color.BLACK, new BasicStroke(),false);
 		
 	}
 
-	public MinhaFormaComLimites(int x1, int y1, int x2, int y2, Color cor, boolean preenchido) {
-		super(x1, y1, x2, y2, cor);
+	public MinhaFormaComLimites(int x1, int y1, int x2, int y2, Color cor, Stroke traco, boolean preenchido) {
+		super(x1, y1, x2, y2, cor, traco);
 		this.preenchido = preenchido;
 	}
 	
