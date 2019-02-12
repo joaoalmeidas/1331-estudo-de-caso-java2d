@@ -1,0 +1,95 @@
+[33mcommit 01b0adca072fa0984234041319beab8b65c46d7c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 15:46:02 2019 -0200
+
+    Adição ao layout de dois JButtons que mostram um diálogo JColorChooser para permitir que o usuário escolha as cores da forma.
+
+[33mcommit 1b31e27a5896e7c2bde5197d83879a59653dc89c[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 15:16:02 2019 -0200
+
+    Adição de um JCheckbox para definir se a forma a ser desenhada deve ser gradiente ou não.
+
+[33mcommit dfe2fb999f3ae82336dcbdaad0f7a02ff9c3d6f4[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 10:07:56 2019 -0200
+
+    Modificação nos argumentos dos métodos construtores das formas.
+
+[33mcommit 5f7ae8753667904fa6173ec3bbdf7cb7f4bfac31[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 10:05:08 2019 -0200
+
+    Criação da variável tracoAtual do tipo Stroke.
+
+[33mcommit d81f1f5cc6b862cead3cccea9f22e80e4e7186b3[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 09:50:59 2019 -0200
+
+    Alteração das variáveis do tipo COlor para Paint em DesenhaPanel.
+
+[33mcommit c310122ebf0171a0c214e664957d9b8bde4eccaf[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 09:45:42 2019 -0200
+
+    Adição de uma variável Stroke à classe MinhaForma.
+
+[33mcommit e61a28d4b34ec180da03945848797bbcef2725cc[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 09:32:46 2019 -0200
+
+    Alteração de todas as variávevis Color para Paint.
+
+[33mcommit 996b630f9453a7828a7929eea41150f9331570b1[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 09:29:45 2019 -0200
+
+    Modificações na classe DesenhaPanel para que o aplicatico continuasse funcionando.
+
+[33mcommit 205f9ef9a0fdf09727bdde94a30ca0ba08c99a81[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 09:25:40 2019 -0200
+
+    Modificação do tipo parâmetro do método desenha() de Graphics para Graphics2D.
+
+[33mcommit ed3bc721b7adb99a7448bc38f065dc07e2a20386[m
+Author: joao <joao182cx@gmail.com>
+Date:   Mon Feb 11 09:05:11 2019 -0200
+
+    Cópia dos códigos do exercício 12.17
+
+[33mcommit 585b0dc57d6656cf1bc991b5d456d228c023ada9[m
+Author: joao <joao182cx@gmail.com>
+Date:   Sun Feb 10 10:51:14 2019 -0200
+
+    Alteração do método abstrato desenha(). Mudança do parâmetro de Graphics para Graphics2D.
+
+[33mcommit ed7f9dc1c298f2049a3b2ac7c99b2af21271bab5[m
+Author: joao <joao182cx@gmail.com>
+Date:   Sun Feb 10 10:37:04 2019 -0200
+
+    Cópia dos códigos do exercício 12.17
+
+[33mcommit 44b1867fc07bd52d9b64cd7675334305dd85c39e[m
+Author: joaoalmeidas <joao182cx@gmail.com>
+Date:   Sun Feb 10 10:34:12 2019 -0200
+
+    Update README.md
+
+[33mcommit b853ea9c0fdebd8ae4ead679379e7b8ee70c009e[m
+Author: joaoalmeidas <joao182cx@gmail.com>
+Date:   Sun Feb 10 10:32:43 2019 -0200
+
+    Upload imagem do exercício
+
+[33mcommit 5ed85a5275fdda3684c8e138608076fbfb88bb33[m
+Author: joaoalmeidas <joao182cx@gmail.com>
+Date:   Sun Feb 10 10:29:52 2019 -0200
+
+    Create README.md
+
+[33mcommit a8d999f954919ebc98b4079050da4620d4952441[m
+Author: joao <joao182cx@gmail.com>
+Date:   Sun Feb 10 10:25:38 2019 -0200
+
+    Início

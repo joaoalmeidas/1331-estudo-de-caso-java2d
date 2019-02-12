@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.GradientPaint;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -24,6 +25,8 @@ public class DesenhaFrame extends JFrame{
 	private final JComboBox<String> listaFormas;
 	private final JCheckBox preenchido;
 	private final JCheckBox gradiente;
+	private Color primeiraCor;
+	private Color segundaCor;
 	
 	private static final String[] nomeCores = {"Azul", "Vermelho", "Verde", "Branco", "Preto", "Amarelo", "Rosa", "Magenta", "Cinza",
 			"Laranja", "Cinza Escuro", "Cinza Claro", "Ciano"};
@@ -53,6 +56,8 @@ public class DesenhaFrame extends JFrame{
 		gradiente = new JCheckBox("Usar gradiente");
 		botaoPrimeiraCor = new JButton("Primeira Cor");
 		botaoSegundaCor = new JButton("Segunda Cor");
+		primeiraCor = Color.BLUE;
+		segundaCor = Color.GRAY;
 		
 		opcoes.add(botaoDesfazer);
 		opcoes.add(botaoLimpar);
@@ -121,11 +126,24 @@ public class DesenhaFrame extends JFrame{
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						
-						desenho.setCorAtual(JColorChooser.showDialog(DesenhaFrame.this, "Escolha uma cor", (Color) desenho.getCorAtual()));
+						primeiraCor = JColorChooser.showDialog(DesenhaFrame.this, "Escolha uma cor", primeiraCor);
 						
-						if(desenho.getCorAtual() == null) {
-							desenho.setCorAtual(Color.GRAY);
+						if(primeiraCor == null) {
+							primeiraCor = Color.GRAY;
 						}
+						
+						if(gradiente.isSelected()) {
+							
+							desenho.setCorAtual(new GradientPaint(0, 0, primeiraCor, 50, 50, segundaCor, true));
+							
+						}else {
+							
+							desenho.setCorAtual(primeiraCor);
+							
+						}
+						
+						
+
 						
 					}
 					
@@ -139,12 +157,24 @@ public class DesenhaFrame extends JFrame{
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
+												
 						
-						desenho.setCorAtualSecundaria(JColorChooser.showDialog(DesenhaFrame.this, "Escolha uma cor", (Color) desenho.getCorAtualSecundaria()));
+						segundaCor = JColorChooser.showDialog(DesenhaFrame.this, "Escolha uma cor", segundaCor);
 						
-						if(desenho.getCorAtualSecundaria() == null) {
-							desenho.setCorAtualSecundaria(Color.GRAY);
+						if(segundaCor == null) {
+							segundaCor = Color.GRAY;
 						}
+						
+						if(gradiente.isSelected()) {
+							
+							desenho.setCorAtual(new GradientPaint(0, 0, primeiraCor, 50, 50, segundaCor, true));
+							
+						}else {
+							
+							desenho.setCorAtual(primeiraCor);
+							
+						}
+						
 						
 					}
 					
@@ -217,6 +247,28 @@ public class DesenhaFrame extends JFrame{
 				
 		);
 		
+		gradiente.addItemListener(
+				
+				new ItemListener() {
+
+					@Override
+					public void itemStateChanged(ItemEvent e) {
+						
+						if(gradiente.isSelected()) {
+							
+							desenho.setCorAtual(new GradientPaint(0, 0, primeiraCor, 50, 50, segundaCor, true));
+							
+						}else {
+							
+							desenho.setCorAtual(primeiraCor);
+							
+						}
+						
+					}
+					
+				}	
+				
+		);
 
 		
 

@@ -21,7 +21,8 @@ public class MeuRetangulo extends MinhaFormaComLimites {
 	@Override
 	public void desenha(Graphics2D g) {
 		
-		g.setColor((Color) getCor());
+		//g.setColor((Color) getCor());
+		g.setPaint(getCor());
 		g.drawRect(retornaXCimaEsquerda(), retornaYCimaEsquerda(), retornaAltura(), retornaLargura());
 		
 		if(isPreenchido() == true) {

@@ -19,7 +19,6 @@ public class DesenhaPanel extends JPanel {
 	private int tipoForma = 0;
 	private MinhaForma formaAtual;
 	private Paint corAtual;
-	private Paint corAtualSecundaria;
 	private boolean preenchido;
 	private JLabel labelStatus;
 	private Stroke tracoAtual;
@@ -32,7 +31,6 @@ public class DesenhaPanel extends JPanel {
 		tipoForma = 2;
 		formaAtual = null;
 		corAtual = Color.BLACK;
-		corAtualSecundaria = Color.GRAY;
 		setBackground(Color.WHITE);
 		preenchido = true;
 		tracoAtual = new BasicStroke();
@@ -97,16 +95,6 @@ public class DesenhaPanel extends JPanel {
 		this.corAtual = corAtual;
 	}
 	
-	public Paint getCorAtualSecundaria() {
-		return corAtualSecundaria;
-	}
-
-
-	public void setCorAtualSecundaria(Paint corAtualSecundaria) {
-		this.corAtualSecundaria = corAtualSecundaria;
-	}
-
-
 	public boolean isPreenchido() {
 		return preenchido;
 	}

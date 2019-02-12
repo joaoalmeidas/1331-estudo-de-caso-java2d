@@ -19,7 +19,8 @@ public class MinhaCircunferencia extends MinhaFormaComLimites{
 	@Override
 	public void desenha(Graphics2D g) {
 		
-		g.setColor((Color) getCor());
+		//g.setColor((Color) getCor());
+		g.setPaint(getCor());
 		g.drawOval(retornaXCimaEsquerda(), retornaYCimaEsquerda(), retornaAltura(), retornaLargura());
 		
 		if(isPreenchido() == true) {
