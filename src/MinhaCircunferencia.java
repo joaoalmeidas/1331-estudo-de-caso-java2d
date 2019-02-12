@@ -21,6 +21,7 @@ public class MinhaCircunferencia extends MinhaFormaComLimites{
 		
 		//g.setColor((Color) getCor());
 		g.setPaint(getCor());
+		g.setStroke(getTraco());
 		g.drawOval(retornaXCimaEsquerda(), retornaYCimaEsquerda(), retornaAltura(), retornaLargura());
 		
 		if(isPreenchido() == true) {

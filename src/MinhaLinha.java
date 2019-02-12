@@ -22,6 +22,7 @@ public class MinhaLinha extends MinhaForma {
 		
 		//g.setColor((Color) getCor());
 		g.setPaint(getCor());
+		g.setStroke(getTraco());
 		g.drawLine(getX1(), getY1(), getX2(), getY2());
 		
 	}

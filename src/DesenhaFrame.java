@@ -1,3 +1,4 @@
+import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -6,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -14,6 +17,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class DesenhaFrame extends JFrame{
 
@@ -25,6 +29,8 @@ public class DesenhaFrame extends JFrame{
 	private final JComboBox<String> listaFormas;
 	private final JCheckBox preenchido;
 	private final JCheckBox gradiente;
+	private final JLabel labelTraco;
+	private final JTextField fieldTraco;
 	private Color primeiraCor;
 	private Color segundaCor;
 	
@@ -49,7 +55,6 @@ public class DesenhaFrame extends JFrame{
 		
 		botaoDesfazer = new JButton("Desfazer");
 		botaoLimpar = new JButton("Limpar");
-		//listaCores = new JComboBox<String>(nomeCores);
 		listaFormas = new JComboBox<String>(nomeFormas);
 		preenchido = new JCheckBox("Preenchido");
 		preenchido.setSelected(true);
@@ -58,15 +63,18 @@ public class DesenhaFrame extends JFrame{
 		botaoSegundaCor = new JButton("Segunda Cor");
 		primeiraCor = Color.BLUE;
 		segundaCor = Color.GRAY;
+		labelTraco = new JLabel("Largura Traço:");
+		fieldTraco = new JTextField(3);
 		
 		opcoes.add(botaoDesfazer);
 		opcoes.add(botaoLimpar);
-		//opcoes.add(listaCores);
 		opcoes.add(listaFormas);
 		opcoes.add(preenchido);
 		opcoes.add(gradiente);
 		opcoes.add(botaoPrimeiraCor);
 		opcoes.add(botaoSegundaCor);
+		opcoes.add(labelTraco);
+		opcoes.add(fieldTraco);
 		
 		add(opcoes, BorderLayout.NORTH);
 		add(desenho, BorderLayout.CENTER);
@@ -269,6 +277,18 @@ public class DesenhaFrame extends JFrame{
 				}	
 				
 		);
+		
+		fieldTraco.addKeyListener(new KeyAdapter() {
+
+			@Override
+			public void keyReleased(KeyEvent arg0) {
+				
+				desenho.setTracoAtual(new BasicStroke(Integer.parseInt(fieldTraco.getText()), BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+				
+				
+			}
+
+		});
 
 		
 
