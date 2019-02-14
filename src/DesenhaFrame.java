@@ -330,7 +330,6 @@ public class DesenhaFrame extends JFrame{
 						
 					}
 					
-					//desenho.setTracoAtual(new BasicStroke(Integer.parseInt(fieldTraco.getText()), BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 					
 				}
 				

@@ -20,7 +20,6 @@ public class MinhaLinha extends MinhaForma {
 	
 	public void desenha(Graphics2D g) {
 		
-		//g.setColor((Color) getCor());
 		g.setPaint(getCor());
 		g.setStroke(getTraco());
 		g.drawLine(getX1(), getY1(), getX2(), getY2());
