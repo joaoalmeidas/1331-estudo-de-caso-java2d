@@ -35,7 +35,7 @@ d) Um campo de texto para inserir o comprimento do traço da linha tracejada Str
 
 e) Uma caixa de seleção para escolher se desenha uma linha tracejada ou sólida.
 
-!(exercicio)[1.png]
+![exercicio](1.png)
 
 Se o usuário optar por desenhar com um gradiente, configure Paint no DrawPanel para ser um gradiente das duas cores escolhidas
 pelo usuário. A expressão
