@@ -31,6 +31,9 @@ public class DesenhaFrame extends JFrame{
 	private final JCheckBox gradiente;
 	private final JLabel labelTraco;
 	private final JTextField fieldTraco;
+	private final JLabel labelTamanhoTraco;
+	private final JTextField fieldTamanhoTraco;
+	private final JCheckBox checkTracado;
 	private Color primeiraCor;
 	private Color segundaCor;
 	
@@ -65,6 +68,9 @@ public class DesenhaFrame extends JFrame{
 		segundaCor = Color.GRAY;
 		labelTraco = new JLabel("Largura Traço:");
 		fieldTraco = new JTextField(3);
+		labelTamanhoTraco = new JLabel("Tamanho Traço:");
+		fieldTamanhoTraco = new JTextField(3);
+		checkTracado = new JCheckBox("Tracejado");
 		
 		opcoes.add(botaoDesfazer);
 		opcoes.add(botaoLimpar);
@@ -75,6 +81,9 @@ public class DesenhaFrame extends JFrame{
 		opcoes.add(botaoSegundaCor);
 		opcoes.add(labelTraco);
 		opcoes.add(fieldTraco);
+		opcoes.add(labelTamanhoTraco);
+		opcoes.add(fieldTamanhoTraco);
+		opcoes.add(checkTracado);
 		
 		add(opcoes, BorderLayout.NORTH);
 		add(desenho, BorderLayout.CENTER);
