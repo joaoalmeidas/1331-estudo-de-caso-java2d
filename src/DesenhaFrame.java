@@ -292,14 +292,139 @@ public class DesenhaFrame extends JFrame{
 			@Override
 			public void keyReleased(KeyEvent arg0) {
 				
-				desenho.setTracoAtual(new BasicStroke(Integer.parseInt(fieldTraco.getText()), BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+				float tracado[] = new float[1];
+				
+				if(fieldTamanhoTraco.getText().equals("")) {
+					
+					tracado[0] = 1;
+					
+				}else {
+					
+					tracado[0] = Integer.parseInt(fieldTamanhoTraco.getText());
+					
+				}
+				
+				
+				if(fieldTraco.getText().equals("")) {
+					
+					if(checkTracado.isSelected()) {
+						
+						desenho.setTracoAtual(new BasicStroke(1, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND, 10, tracado, 0));
+							
+					}else {
+						
+						desenho.setTracoAtual(new BasicStroke(1, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+						
+					}
+					
+					
+				}else {
+					
+					if(checkTracado.isSelected()) {
+						
+						desenho.setTracoAtual(new BasicStroke(Integer.parseInt(fieldTraco.getText()), BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND, 10, tracado, 0));
+							
+					}else {
+						
+						desenho.setTracoAtual(new BasicStroke(Integer.parseInt(fieldTraco.getText()), BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+						
+					}
+					
+					//desenho.setTracoAtual(new BasicStroke(Integer.parseInt(fieldTraco.getText()), BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+					
+				}
+				
+				
+			}
+
+		});
+		
+		fieldTamanhoTraco.addKeyListener(new KeyAdapter() {
+
+			@Override
+			public void keyReleased(KeyEvent arg0) {
+				
+				float tracado[] = new float[1];
+				int tamanhoLinha;
+				
+				if(fieldTamanhoTraco.getText().equals("")) {
+					
+					tracado[0] = 1;
+					
+				}else {
+					
+					tracado[0] = Integer.parseInt(fieldTamanhoTraco.getText());
+					
+				}
+				
+				if(fieldTraco.getText().equals("")) {
+					
+					tamanhoLinha = 1;
+					
+				}else {
+					
+					tamanhoLinha = Integer.parseInt(fieldTraco.getText());
+					
+				}
+				
+				if(checkTracado.isSelected()) {
+					
+					
+					desenho.setTracoAtual(new BasicStroke(tamanhoLinha, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND, 10, tracado, 0));
+					
+				}
+				
 				
 				
 			}
 
 		});
 
-		
+		checkTracado.addItemListener(
+				
+				new ItemListener() {
+
+					@Override
+					public void itemStateChanged(ItemEvent e) {
+						
+						float tracado[] = new float[1];
+						int tamanho;
+						
+						if(fieldTamanhoTraco.getText().equals("")) {
+							
+							tracado[0] = 1;
+							
+						}else {
+							
+							tracado[0] = Integer.parseInt(fieldTamanhoTraco.getText());
+							
+						}
+						
+						if(fieldTraco.getText().equals("")) {
+							
+							tamanho = 1;
+							
+						}else {
+							
+							tamanho = Integer.parseInt(fieldTraco.getText());
+							
+						}
+						
+						if(checkTracado.isSelected()) {
+							
+							desenho.setTracoAtual(new BasicStroke(tamanho, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND, 10, tracado, 0));
+							
+						}else {
+							
+							desenho.setTracoAtual(new BasicStroke(tamanho, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+							
+						}
+						
+					}
+					
+				}	
+				
+		);
 
 		
 	}
